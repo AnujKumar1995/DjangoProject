@@ -13,12 +13,14 @@ FROM node:12-alpine AS builder
 ENV PATH reactApp/app/node_modules/.bin:$PATH
 
 RUN mkdir reactApp
-WORKDIR /reactApp
-COPY ./reactApp reactApp/app
-COPY ./reactApp reactApp/app/package.json
+WORKDIR /reactApp/App
+COPY ./reactApp reactApp/App
+
 
 RUN  npm install
 RUN  npm install react
+COPY ./reactApp reactApp/App/package.json
+
 
 RUN adduser -D user
 USER user
