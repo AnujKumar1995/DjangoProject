@@ -16,7 +16,7 @@ RUN mkdir reactApp
 WORKDIR /reactApp
 COPY ./reactApp /App
 
-COPY ./reactApp reactApp/App/package.json
+COPY ./reactApp App/package.json
 RUN  npm install
 RUN  npm install react
 
