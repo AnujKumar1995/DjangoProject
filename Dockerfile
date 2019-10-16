@@ -10,12 +10,11 @@ COPY ./app /app
 
 
 FROM node:12-alpine AS builder
-ENV PATH reactApp/app/node_modules/.bin:$PATH
+ENV PATH reactApp/App/node_modules/.bin:$PATH
 
 RUN mkdir reactApp
-WORKDIR /reactApp/App
-COPY ./reactApp reactApp/App
-
+WORKDIR /reactApp
+COPY ./reactApp /App
 
 RUN  npm install
 RUN  npm install react
