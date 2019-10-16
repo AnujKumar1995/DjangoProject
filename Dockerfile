@@ -16,9 +16,10 @@ RUN mkdir reactApp
 WORKDIR /reactApp
 COPY ./reactApp /App
 
+COPY ./reactApp reactApp/App/package.json
 RUN  npm install
 RUN  npm install react
-COPY ./reactApp reactApp/App/package.json
+
 
 
 RUN adduser -D user

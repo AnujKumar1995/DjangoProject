@@ -8,7 +8,7 @@ services:
       - "8000:8000"
     volumes:
       - ./app:/app
-      - ./reactApp:reactApp/App
+      - ./App:/App
     command: >
       sh -c "python manage.py makemigrations"
       sh -c "python manage.py migrate"
