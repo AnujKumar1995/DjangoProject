@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  django_app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./django_app:/django_app    
+    command: >
+      sh -c "python manage.py makemigrations"
+      sh -c "python manage.py migrate"
+      sh -c "python manage.py createsuperuser"
+      sh -c "python3.7 manage.py runserver 0.0.0.0:8000"  

@@ -1,0 +1,13 @@
+FROM node:12-alpine AS builder
+ENV PATH react_app/app/node_modules/.bin:$PATH
+
+RUN mkdir /react_app
+WORKDIR /app
+COPY . .
+
+COPY . app/package.json/ 
+
+CMD ["npm","yarn","run"]
+
+RUN adduser -D user
+USER user

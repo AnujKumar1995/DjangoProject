@@ -1,0 +1,12 @@
+FROM python:3.7-alpine
+ENV PYTHONUNBUFFERED 1
+
+COPY ./requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt
+
+RUN mkdir /django_app
+WORKDIR /django_app
+COPY ./django_app /django_app 
+
+RUN adduser -D user
+USER user
