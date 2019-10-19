@@ -6,7 +6,7 @@ RUN pip install -r /requirements.txt
 
 RUN mkdir /django_app
 WORKDIR /django_app
-COPY ./django_app /django_app 
+COPY django_app .
 
 RUN adduser -D user
 USER user
